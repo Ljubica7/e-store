@@ -8,9 +8,19 @@ import { useUserContext } from '../context/user_context';
 
 const CartButtons = () => {
   return (
-    <div>
-      <h2>cart buttons</h2>
-    </div>
+    <Wrapper className='cart-btn-wrapper'>
+      <Link to='/cart' className='cart-btn'>
+        Cart
+        <span className='cart-container'>
+          <FaShoppingCart />
+          <span className='cart-value'>12</span>
+        </span>
+      </Link>
+      <button type='button' className='auth-btn'>
+        Login
+        <FaUserPlus />
+      </button>
+    </Wrapper>
   );
 };
 
