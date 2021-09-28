@@ -5,11 +5,13 @@ import App from './App';
 import { ProductsProvider } from './context/products_context';
 import { FilterProvider } from './context/filter_context';
 import { CartProvider } from './context/cart_context';
-// import
+import { UserProvider } from './context/user_context';
+// import {Auth0Provider} from '@auth0/auth0-react'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ProductsProvider>
     <App />
-  </React.StrictMode>,
+  </ProductsProvider>,
+
   document.getElementById('root')
 );

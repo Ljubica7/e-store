@@ -4,9 +4,33 @@ import { services } from '../utils/constants';
 
 const Services = () => {
   return (
-    <div>
-      <h2>services</h2>
-    </div>
+    <Wrapper>
+      <div className='section-center'>
+        <article className='header'>
+          <h3>
+            custom furniture <br />
+            build only for you
+          </h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
+            minima dolore nostrum sit a expedita? Eius perspiciatis nulla ab
+            iste!
+          </p>
+        </article>
+        <div className='services-center'>
+          {services.map((service) => {
+            const { id, icon, title, text } = service;
+            return (
+              <article key={id} className='service'>
+                <span className='icon'>{icon}</span>
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </Wrapper>
   );
 };
 
