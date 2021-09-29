@@ -26,7 +26,6 @@ const SingleProductsPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
-    console.log(product);
   }, [id]);
 
   useEffect(() => {
@@ -63,10 +62,10 @@ const SingleProductsPage = () => {
           back to products
         </Link>
         <div className='product-center'>
-          <ProductImages />
+          <ProductImages images={images} />
           <section className='content'>
             <h2>{name}</h2>
-            <Stars />
+            <Stars stars={stars} reviews={reviews} />
             <h5 className='price'>{formatPrice(price)}</h5>
             <p className='desc'>{description}</p>
             <p className='info'>
@@ -82,7 +81,7 @@ const SingleProductsPage = () => {
               {company}
             </p>
             <hr />
-            {stock > 0 && <AddToCart />}
+            {stock > 0 && <AddToCart product={product} />}
           </section>
         </div>
       </div>
